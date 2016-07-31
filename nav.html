@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset='utf-8' />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="../lib/bootstrap-3.3.6/css/bootstrap.min.css" />
+		<style>
+			.navbar-brand img {
+				height: 100%;
+				width: auto;
+			}
+			body {
+				padding-top: 70px; /* for .navbar-fixed-top */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Brand</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<!-- hamburger button -->
+					<!-- .navbar-toggle: hide depending on viewport width -->
+					<!-- .collapsed: ???? -->
+					<button type="button"
+						class="navbar-toggle collapsed"
+						data-toggle="collapse"
+						data-target="#collapsing-items">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#"><img src="img/git.png" /></a>
+				</div>
+				<div class="collapse navbar-collapse"
+					id="collapsing-items">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Link1</a></li>
+						<li><a href="#">Link2</a></li>
+						<li><a href="#">Link3</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Brand</a>
+				</div>
+				<!-- without collapse for the sake of simplicity -->
+				<!-- navbar-text, navbar-btn, navbar-form, navbar-link -->
+				<p class="navbar-text">beta</p>
+				<button type="button"
+					class="btn btn-primary navbar-btn navbar-left">Help</button>
+				<p class="navbar-text"><a href="#" class="navbar-link">logout</a></p>
+				<form class="navbar-form navbar-right">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Keyword">
+					</div>
+					<button type="submit" class="btn btn-default">Search</button>
+				</form>
+			</div>
+		</div>
+
+		<div class="container">
+			<!-- with JS -->
+			<div class="well">
+				<ul id="tabsByJs" class="nav nav-tabs">
+					<li class="active"><a href="#tab1">Tab1</a></li>
+					<li><a href="#tab2">Tab2</a></li>
+					<li><a href="#tab3">Tab3</a></li>
+				</ul>
+				<div id="tabContent" class="tab-content">
+					<div id="tab1" class="tab-pane active">
+						<p>This is content for Tab1.</p>
+					</div>
+					<div id="tab2" class="tab-pane">
+						<p>This is content for Tab2.</p>
+					</div>
+					<div id="tab3" class="tab-pane">
+						<p>This is content for Tab3.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- without JS(with date-toggle attribute) -->
+			<div class="well">
+				<ul id="tabsByAttr" class="nav nav-tabs nav-justified">
+					<li class="active"><a href="#tabA1" data-toggle="tab">TabA1</a></li>
+					<li><a href="#tabA2" data-toggle="tab">TabA2</a></li>
+					<li><a href="#tabA3" data-toggle="tab">TabA3</a></li>
+				</ul>
+				<div id="tabContent" class="tab-content">
+					<!--
+					.fade      for fade effect.
+					.fade.in   for initial active tab.
+					-->
+					<div id="tabA1" class="tab-pane fade in active">
+						<p>This is content for TabA1.</p>
+					</div>
+					<div id="tabA2" class="tab-pane fade">
+						<p>This is content for TabA2.</p>
+					</div>
+					<div id="tabA3" class="tab-pane fade">
+						<p>This is content for TabA3.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="well">
+				<div class="btn-toolbar">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default">Left</button>
+						<button type="button" class="btn btn-default">Middle</button>
+						<button type="button" class="btn btn-default">Right</button>
+					</div>
+					<div class="btn-group btn-group-sm">
+						<button type="button" class="btn btn-default">A</button>
+						<button type="button" class="btn btn-default">B</button>
+						<button type="button" class="btn btn-default">C</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script>
+			$('#tabsByJs a').click(function (e) {
+				e.preventDefault();
+				$(this).tab('show');
+			})
+		</script>
+	</body>
+</html>
